@@ -2,8 +2,10 @@
 use employees;
 
 show tables;
+-- departments, dept_emp, dept_manager, employees, salaries, titles
 
-show create table employees;
+describe employees;
+-- int, date, varchar(14), var(16), enum('M','F')
 
 describe employees;
 describe departments;
@@ -20,7 +22,7 @@ describe titles;
 -- Which table(s) do you think contain a date type column? (Write this question and your answer in a comment)
 -- 	dept_emp, employees, dept_manager, salaries, titles
 -- What is the relationship between the employees and the departments tables? (Write this question and your answer in a comment)
--- 	departments is within the employees database
+-- 	departments is a table within the employees database, employees is also a table within the employees database
 -- Show the SQL that created the dept_manager table. Write the SQL it takes to show this as your exercise solution.
--- show create table dept_manager;
+-- 	show create table dept_manager;
 show create table dept_manager;
