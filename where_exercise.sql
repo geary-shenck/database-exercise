@@ -50,8 +50,9 @@ LIMIT 1000000;
 SELECT *
 FROM employees
 WHERE last_name LIKE "%E"
+AND NOT last_name LIKE "E%"
 LIMIT 1000000;
--- 24,292
+-- 23,393
 
 -- Find all current or previous employees employees whose last name starts and ends with 'E'. 
 -- Enter a comment with the number of employees whose last name starts and ends with E. 
@@ -62,6 +63,10 @@ WHERE last_name LIKE "%E"
 AND last_name LIKE "E%"
 LIMIT 1000000;
 -- 899
+SELECT *
+FROM employees
+WHERE last_name LIKE "%E"
+LIMIT 1000000;
 -- 24,292 (see above)
 
 -- Find all current or previous employees hired in the 90s. 
