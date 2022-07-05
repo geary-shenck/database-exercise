@@ -52,4 +52,4 @@ include albums with a genre of "Hard rock" or "Progressive rock"? */
 SELECT name, genre FROM albums_db.albums WHERE genre = 'Rock';
 -- 5 of them, explict search for 'Rock', not inclusive
 
-SELECT name, genre FROM albums_db.albums WHERE genre like '%Rock';
+SELECT name, genre FROM albums_db.albums WHERE genre like '%Rock%';
