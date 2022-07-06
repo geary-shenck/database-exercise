@@ -25,11 +25,13 @@ SELECT *,
 DATEDIFF (NOW(),hire_date) AS DAYS_SINCE_HIRED
 FROM employees
 WHERE birth_date LIKE '%12-25'
-AND hire_date BETWEEN '1990-01-01' AND '1999-12-31';
+	AND hire_date BETWEEN '1990-01-01' AND '1999-12-31';
 
 -- Find the smallest and largest current salary from the salaries table
 SELECT max(salary),min(salary)
-FROM salaries;
+FROM salaries
+where to_date >= now();
+-- 158,220 | 38,623
 
 
 /* Use your knowledge of built in SQL functions to generate a username for all of the employees. 
