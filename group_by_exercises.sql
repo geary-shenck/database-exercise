@@ -52,14 +52,15 @@ FROM employees
 WHERE first_name IN ('Irena','Vidya','Maya')
 GROUP BY first_name
 ORDER BY first_name; 
-------------------------
+------------------------ */
 SELECT first_name, gender, COUNT(gender)
 FROM employees
 WHERE gender IN ('M','F')
 	AND first_name IN ('Irena','Vidya','Maya')
 GROUP BY first_name, gender
 ORDER BY first_name;
-*/
+--
+
 SELECT gender, COUNT(*)
 FROM employees
 WHERE gender IN ('M','F')
