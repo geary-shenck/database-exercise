@@ -83,6 +83,7 @@ SELECT titles.title, count(titles.title)
 	JOIN titles
 		USING (emp_no)
 	WHERE titles.to_date like "9999%"
+		AND dept_emp.to_date > now()
 		AND departments.dept_name = "Customer Service"
 	GROUP BY titles.title
     ORDER BY titles.title
@@ -202,7 +203,7 @@ SELECT CONCAT(employees.first_name," ",employees.last_name) as "Employee_Name",
     LIMIT 5000000 
 ;
 
-/* Different approach (did not finish)
+/* Different approach (did not finish) 
 SELECT  CONCAT(employees.first_name," ",employees.last_name) as "Manager_Name",
 		departments.dept_name AS "Department_Name", 
 		CONCAT(emp2.first_name, " ", emp2.last_name) as "Employee_Name"
@@ -224,7 +225,19 @@ SELECT  CONCAT(employees.first_name," ",employees.last_name) as "Manager_Name",
 	ORDER BY departments.dept_name DESC 
     LIMIT 5000000 
 ;
-*/
+*/	
+    
+/* 	concat(managers.first_name," ", managers.last_name) as mangername
+	dept_name
+    concat(employees.first_name, " ", employees.last_name) as employeename
+	from employees as managers
+	join dept_manager using (emp_no)
+    join departments using (dept_no)
+    join dept_emp using(dept_no)
+    join employees on dept_emp.emp_no = employees.emp_no
+    where dept_manager.to_date > curdate()
+    and dept_emp.to_date > curdate() */
+    
 
 -- Who is the highest paid employee within each department.
 SELECT dept_name, MaxSal, Names
