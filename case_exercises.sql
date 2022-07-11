@@ -14,9 +14,9 @@ FROM dept_emp
 -- depending on the first letter of their last name.
 SELECT 
 	CONCAT (first_name, " ", last_name)fullName,
-    CASE
+    CASE -- doing it this way only works because it exits on match
         WHEN SUBSTR(last_name, 1,1) <= 'H' THEN 'A-H'
-        WHEN SUBSTR(last_name, 1, 1) <= 'Q' THEN 'I-Q'
+        WHEN SUBSTR(last_name, 1,1) <= 'Q' THEN 'I-Q'
         WHEN SUBSTR(last_name, 1,1) <= 'Z' THEN 'R-Z'
     END AS alpha_group
 FROM employees;
